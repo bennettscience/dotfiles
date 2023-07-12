@@ -1,0 +1,36 @@
+theme = "sonokai_andromeda"
+
+[editor]
+mouse = false
+cursorline = true
+bufferline = "always"
+scrolloff = 999
+line-number = 'relative'
+rulers = [88]
+# auto-format = false
+
+[editor.statusline]
+left = ["mode", "version-control", "file-name"]
+
+[keys.normal]
+esc = ["collapse_selection", "keep_primary_selection"]
+C-f = [":new", ":insert-output fmatter"]
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.file-picker]
+hidden = true
+
+[editor.lsp]
+display-messages = true
+auto-signature-help = true
+display-inlay-hints = true
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 30
+wrap-at-text-width = true
+
+[editor.whitespace]
+render = "all"

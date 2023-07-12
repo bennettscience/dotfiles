@@ -1,0 +1,7 @@
+Upstream = +upstream
+cep807 = +cep807
+cep820 = +cep820
+conference = +dot
+grad = +grad
+macul = +macul
+tasks = +tasks

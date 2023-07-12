@@ -1,0 +1,61 @@
+[[language]]
+name = "html"
+scope = "source.html"
+formatter = { command = 'prettier', args = ["--parser", "html"]}
+language-servers = [{ name="vscode-html-language-server"}]
+file-types = ["html"]
+auto-format = true
+indent = { unit = "\t", tab-width = 4 }
+
+[[language]]
+name = "css"
+formatter = { command = 'prettier', args = ["--parser", "css"]}
+language-servers = [{ name="vscode-css-language-server"}]
+file-types = ["css"]
+auto-format = true
+indent = { unit = "\t", tab-width = 2 }
+
+[[language]]
+name = "javascript"
+formatter = { command = 'prettier', args = ["--parser", "typescript"]}
+auto-format = true
+language-servers = [{ name="typescript-language-server"}]
+file-types = ["js"]
+
+[[language]]
+name = "json"
+auto-format = false
+language-servers = [{ name="vscode-json-language-server"}]
+file-types = ["json"]
+
+[[language]]
+name = "markdown"
+auto-format = true
+language-servers = [{ name="marksman" }, { name="ltex" }]
+file-types = ["md", "rst"]
+
+[language-server.ltex]
+command = "/opt/homebrew/bin/ltex-ls"
+
+[[language]]
+name = "python"
+roots = ["pyproject.toml", "setup.py", "Poetry.lock", ".git"]
+language-servers = [{ name="pylsp" }]
+file-types = ["py"]
+auto-format = true
+formatter = { command = 'black', args = ["--quiet", "-"]}
+indent = { unit = "    ", tab-width = 4 }
+
+[[language]]
+name = "toml"
+scope = "source.toml"
+injection-regex = "toml"
+file-types = ["toml", "poetry.lock", "Cargo.lock"]
+roots = []
+comment-token = "#"
+language-servers = [ "taplo" ]
+indent = { tab-width = 2, unit = "  " }
+
+[language-server.taplo]
+command = ""
+args = ["lsp", "stdio"]
